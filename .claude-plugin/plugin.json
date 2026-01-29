@@ -1,0 +1,12 @@
+{
+  "name": "claude-code-skills",
+  "description": "Claude Code 技能集合：小说写作助手等实用技能",
+  "version": "1.0.0",
+  "author": {
+    "name": "seostar"
+  },
+  "homepage": "https://github.com/156554395/claude-code-skills",
+  "repository": "https://github.com/156554395/claude-code-skills",
+  "license": "MIT",
+  "keywords": ["skills", "novel", "writing", "chinese", "小说", "写作"]
+}

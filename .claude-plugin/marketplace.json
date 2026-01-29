@@ -1,0 +1,18 @@
+{
+  "name": "claude-code-skills-market",
+  "description": "Claude Code 中文技能集合",
+  "owner": {
+    "name": "seostar"
+  },
+  "plugins": [
+    {
+      "name": "claude-code-skills",
+      "description": "Claude Code 技能集合：小说写作助手等实用技能",
+      "version": "1.0.0",
+      "source": "./",
+      "author": {
+        "name": "seostar"
+      }
+    }
+  ]
+}
