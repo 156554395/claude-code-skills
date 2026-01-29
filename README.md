@@ -20,8 +20,9 @@ claude
 
 # 2. 添加市场插件
 /plugin marketplace add 156554395/claude-code-skills
+
 # 3. 安装小说技能插件
-/plugin install claude-code-skills@156554395
+/plugin install novel-writer@claude-code-skills-market
 ```
 
 ### 方法二：手动安装
@@ -43,11 +44,13 @@ cp -r claude-code-skills/skills/* ~/.claude/skills/
 **支持类型：** 玄幻、仙侠、都市、科幻、历史、武侠、网游、灵异、军事、竞技
 
 **触发方式：**
+
 - `写小说`
 - `创作小说`
 - `生成小说`
 
 **功能特点：**
+
 - 交互式需求收集
 - AI 自动生成大纲
 - 逐章生成完整小说
@@ -81,13 +84,11 @@ skills/
 name: your-skill-name
 description: 简短描述触发条件和使用场景
 ---
-
 # 技能名称
 
 ## 技能触发条件
 - 触发词1
 - 触发词2
-
 ## 核心工作流
 ...
 ```
@@ -95,6 +96,7 @@ description: 简短描述触发条件和使用场景
 ## 贡献
 
 欢迎贡献新的技能！请确保：
+
 - 提供清晰的 SKILL.md 定义
 - 编写详细的 README.md 用户文档
 - 遵循现有技能的风格

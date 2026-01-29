@@ -6,7 +6,7 @@
   },
   "plugins": [
     {
-      "name": "claude-code-skills",
+      "name": "novel-writer",
       "description": "Claude Code 技能集合：小说写作助手等实用技能",
       "version": "1.0.0",
       "source": "./",
