@@ -57,6 +57,29 @@ cp -r claude-code-skills/skills/* ~/.claude/skills/
 
 详细文档：[novel-writer README](./skills/novel-writer/README.md)
 
+### [ppt-image-generator](./skills/ppt-image-generator/) - PPT幻灯片图片生成
+
+使用豆包 Seedream AI 模型直接生成高质量 PPT 幻灯片图片。
+
+**支持风格：**
+
+- 渐变拟物玻璃卡片风格 (gradient-glass) - 适合产品演示、技术分享、创意提案
+- 矢量插画风格 (vector-illustration) - 适合教育演示、儿童内容、品牌展示
+
+**触发方式：**
+
+- `生成PPT图片`
+- `创建幻灯片图片`
+- `PPT图片生成`
+
+**功能特点：**
+
+- 完全并发生成，每张图片使用独立 subAgent
+- 自动下载到本地统一目录
+- 生成完整的 prompts.json 记录
+
+详细文档：[ppt-image-generator README](./skills/ppt-image-generator/README.md)
+
 ## 使用方法
 
 安装后，在 Claude Code 对话中使用触发词即可激活技能：

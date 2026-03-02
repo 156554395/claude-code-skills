@@ -7,9 +7,18 @@
   "plugins": [
     {
       "name": "novel-writer",
-      "description": "Claude Code 技能集合：小说写作助手等实用技能",
+      "description": "小说写作助手 - 帮助新手作者快速生成网络小说",
       "version": "1.0.0",
-      "source": "./",
+      "source": "./skills/novel-writer",
+      "author": {
+        "name": "seostar"
+      }
+    },
+    {
+      "name": "ppt-image-generator",
+      "description": "PPT幻灯片图片生成 - 使用豆包AI生成高质量PPT图片",
+      "version": "1.0.0",
+      "source": "./skills/ppt-image-generator",
       "author": {
         "name": "seostar"
       }
