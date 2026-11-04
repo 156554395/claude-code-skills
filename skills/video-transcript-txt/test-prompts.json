@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "prompt": "把 /absolute/path/demo.mp4 转写成带时间戳的 TXT",
+    "expected": "按单视频流程调用脚本，默认中文 zh 和 --diarization auto；成功时输出中性说话人标签，分离不可用时明确降级；汇报 SUMMARY_JSON 摘要。"
+  },
+  {
+    "id": 2,
+    "prompt": "把 /absolute/path/a.mp4 和 /absolute/path/b.mp4 都转写成 TXT，处理完告诉我总时长",
+    "expected": "识别为多视频任务，先做批量预检查；默认尝试说话人分离时并发 1，短视频且资源充足时最多 2；最终汇报成功/失败、总视频时长和实际处理总耗时。"
+  },
+  {
+    "id": 3,
+    "prompt": "转写 /absolute/path/demo.mp4，已经有结果就不要覆盖",
+    "expected": "如果输出已存在则停止该视频处理并提示原因，不传 --force；不删除、不移动、不修改源视频。"
+  },
+  {
+    "id": 4,
+    "prompt": "转写 /absolute/path/demo.mp4，允许覆盖已有 TXT",
+    "expected": "在用户明确允许覆盖时传 --force，仍只生成最终 TXT，不保留 WAV、JSON、SRT、VTT、TSV 或原始 ASR TXT。"
+  },
+  {
+    "id": 5,
+    "prompt": "转写 /absolute/path/interview.mp4，并区分不同角色",
+    "expected": "传 --diarization required；只输出说话人1、说话人2等中性声音聚类标签；分离失败时任务失败且不生成最终 TXT。"
+  },
+  {
+    "id": 6,
+    "prompt": "这个访谈就是两个人，请区分说话人",
+    "expected": "传 --diarization required --speaker-count 2；不得把两个聚类猜成真实姓名或职业。"
+  },
+  {
+    "id": 7,
+    "prompt": "请区分视频里的主持人和医生",
+    "expected": "说明自动能力只能输出中性说话人标签，不能自动断言谁是主持人或医生；使用 --diarization required，真实角色映射需人工校对。"
+  },
+  {
+    "id": 8,
+    "prompt": "只要普通转写，不要区分说话人",
+    "expected": "传 --diarization off，不加载 pyannote，不输出说话人标签。"
+  },
+  {
+    "id": 9,
+    "prompt": "普通转写时没有 HF_TOKEN 怎么办",
+    "expected": "默认 auto 可在 pyannote 认证失败时明确警告并降级为普通转写；TXT 和 SUMMARY_JSON 不得包含 token。"
+  },
+  {
+    "id": 10,
+    "prompt": "必须区分角色，但当前没有 HF_TOKEN",
+    "expected": "使用 required 语义；认证失败则非零退出且不生成最终 TXT，不得静默交付无标签结果。"
+  },
+  {
+    "id": 11,
+    "prompt": "把这几个视频转成英文转写，并告诉我总共处理了多久",
+    "expected": "使用用户指定语言；默认 auto；同时说明总视频时长和实际处理总耗时，并说明并行时两者不是简单相加。"
+  }
+]

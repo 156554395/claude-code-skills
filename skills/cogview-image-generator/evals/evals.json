@@ -1,0 +1,30 @@
+{
+  "skill_name": "cogview-image-generator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "用智谱 glm-image 生成一张雨夜上海街头的电影感图片。默认不要水印。",
+      "expected_output": "直接使用官方 images/generations endpoint，传入 prompt、支持的 model、size、quality，并显式传 watermark_enabled=false。"
+    },
+    {
+      "id": 2,
+      "prompt": "帮我生成极简、复古、赛博朋克三种咖啡杯产品主图，都不要水印。",
+      "expected_output": "为三个版本分别准备提示词并分别调用官方接口；每次请求 watermark_enabled=false，不虚构批量字段。"
+    },
+    {
+      "id": 3,
+      "prompt": "生成一张科幻城市海报，保留官方水印，使用 cogview-4。",
+      "expected_output": "准确使用 cogview-4，并仅因用户明确要求保留水印而传 watermark_enabled=true。"
+    },
+    {
+      "id": 4,
+      "prompt": "把我上传的照片换成海边背景，并保留人物。",
+      "expected_output": "不调用本技能；说明当前技能只支持文生图，不支持已有图片编辑或局部重绘。"
+    },
+    {
+      "id": 5,
+      "prompt": "生成一个十秒的 CogVideo 视频。",
+      "expected_output": "不调用 CogView 图片生成 API；转交视频生成能力或说明图片技能边界。"
+    }
+  ]
+}
