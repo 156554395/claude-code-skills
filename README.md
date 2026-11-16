@@ -10,6 +10,14 @@
 npx skills add 156554395/claude-code-skills
 ```
 
+单独安装 HTML 发布技能：
+
+```bash
+npx skills add 156554395/claude-code-skills --skill wrangler-html-publish
+```
+
+默认安装到当前项目；需要用户级全局安装时，在命令末尾加 `-g`，再按提示选择目标 Agent。
+
 ### Claude Code 插件市场（兼容安装）
 
 ```text
@@ -40,6 +48,7 @@ cp -r claude-code-skills/skills/* ~/.claude/skills/
 | [dedao-thinking-skills](./skills/dedao-thinking-skills/) | 提供润色、点评、拷问、回顾、创作、发芽六种思考模式。 |
 | [amoeba-management-analysis](./skills/amoeba-management-analysis/) | 提供阿米巴经营和单位时间核算分析。 |
 | [cogview-image-generator](./skills/cogview-image-generator/) | 使用智谱 glm-image API 进行文生图。 |
+| [wrangler-html-publish](./skills/wrangler-html-publish/) | HTML 生成后归档到用户固定目录，经授权通过 Wrangler 发布到 Cloudflare Pages 并验证访问链接。 |
 
 ## 许可
 
