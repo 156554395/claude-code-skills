@@ -43,6 +43,10 @@ node "<skill-dir>/scripts/files.mjs" archive "<输入HTML>" "<归档根目录>" 
 
 ## 2. 首次使用与环境检查
 
+### 🔴 CHECKPOINT 1 · 公开授权与隐私
+
+进入登录、创建项目或部署前，确认本次页面及资源已审查，且用户授权覆盖其公开范围。没有公开授权 → 保存归档并询问；明确仅本地 → 在此结束，不登录；含敏感信息且未完成脱敏确认 → 🛑 STOP，不继续发布。配置文件和随机 URL 都不能代替公开授权或访问控制。
+
 只有准备发布才检查登录与账号。首次发布合并询问必要信息：归档目录是否合适、选择/新建哪个项目、目标分支、是否允许公开本次页面。不要反复问已经确认的信息；按照 `references/state.md` 保存非敏感配置，不保存笼统的永久自动公开授权。
 
 macOS/Linux：
@@ -96,6 +100,10 @@ wrangler pages project create "<project-name>" --production-branch "<production-
 - 历史文件按发布时 SHA256 复核；改变即停止，重新审核并授权更新。待发布新页同样读取审核，生成本次白名单与 SHA256。
 - 不读取整个目录自动加入清单；不允许 `functions/`、`_worker.js`、凭证、隐藏文件、符号链接、source maps、Node 依赖或 Wrangler 配置。辅助脚本保守拒绝 `_headers`/`_redirects`；需要这些配置的站点转人工审核流程，不为绕过检查改名。
 
+### 🔴 CHECKPOINT 2 · 目标与历史完整性
+
+构建 plan 前，核对账号、项目、分支与配置/历史 manifest 一致，并确认该目标是已核验的空目标，或已取得其完整已发布快照及清单。任一目标不明、历史源缺失或旧文件 SHA256 不符 → 🛑 STOP；先找回可信源、重新审核变更或让用户确认独立空目标，不能把“没有本地清单”当作“远端为空”。
+
 构建 plan，格式见 `references/state.md`。明确目标路径：
 ```text
 staging/
@@ -114,7 +122,9 @@ node "<skill-dir>/scripts/files.mjs" stage "<plan.json>" "<尚不存在的stagin
 
 ## 4. 部署与状态记录
 
-部署前核对：账号、项目、分支、production/preview、完整文件白名单、是否替换现有页面、公开可见性。授权范围变化或敏感性存疑则暂停确认。
+### 🔴 CHECKPOINT 3 · 上传前最终核对
+
+部署前列明账号、项目、分支、production/preview、公开可见性、完整文件白名单及替换范围，并复算 staging 文件集合与 SHA256，确认和本次审核计划完全一致，无草稿或状态文件混入。范围与既有授权一致且三项检查点均通过 → 执行部署，无须重复索取相同授权；出现额外文件、哈希变化、覆盖范围扩大或敏感性存疑 → 🛑 STOP，修正快照并重新审核，必要时取得新增范围授权。
 
 ```sh
 wrangler pages deploy "<staging绝对路径>" --project-name "<project-name>" --branch "<confirmed-branch>"
