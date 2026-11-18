@@ -49,6 +49,7 @@ cp -r claude-code-skills/skills/* ~/.claude/skills/
 | [amoeba-management-analysis](./skills/amoeba-management-analysis/) | 提供阿米巴经营和单位时间核算分析。 |
 | [cogview-image-generator](./skills/cogview-image-generator/) | 使用智谱 glm-image API 进行文生图。 |
 | [wrangler-html-publish](./skills/wrangler-html-publish/) | HTML 生成后归档到用户固定目录，经授权通过 Wrangler 发布到 Cloudflare Pages 并验证访问链接。 |
+| [eli5](./skills/eli5/) | 将晦涩技术文档转化为通俗易懂的解释，输出前后对比、类比说明和常见误区。 |
 
 ## 许可
 

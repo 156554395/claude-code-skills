@@ -94,6 +94,15 @@
       "author": {
         "name": "seostar"
       }
+    },
+    {
+      "name": "eli5",
+      "description": "将晦涩技术内容转化为通俗解释，通过前后对比、类比和实用上下文简化专业术语",
+      "version": "1.0.0",
+      "source": "./skills/eli5",
+      "author": {
+        "name": "seostar"
+      }
     }
   ]
 }
